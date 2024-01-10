@@ -2,7 +2,7 @@ python main_moco.py \
 --moco-m-cos \
 --crop-min=.2 \
 --gpu=0 \
---data="/jvrielinkAIML_rot_corrected" \
+--data="/jvrielink/AIML_rot_corrected" \
 --annotations_file="annotations/img_paths_mini.csv" \
 -b=256 \
 --epochs=8 \
