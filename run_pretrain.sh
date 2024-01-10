@@ -4,10 +4,10 @@ python main_moco.py \
 --gpu=0 \
 --data="/jvrielink/AIML_rot_corrected" \
 --annotations_file="annotations/img_paths.csv" \
--b=512 \
+-b=256 \
 --epochs=400 \
 --workers=14 \
---exp_name="debug_moco" \
+--exp_name="moco_base_params_bs256_ep400" \
 --output_dir="/data/moco_models"
 
 

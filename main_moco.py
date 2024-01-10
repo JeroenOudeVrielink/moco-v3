@@ -386,7 +386,7 @@ def main_worker(gpu, ngpus_per_node, args):
     else:
         # AllGather/rank implementation in this code only supports DistributedDataParallel.
         raise NotImplementedError("Only DistributedDataParallel is supported.")
-    print(model)  # print model after SyncBatchNorm
+    # print(model)  # print model after SyncBatchNorm
     wandb.watch(model)
 
     if args.optimizer == "lars":
