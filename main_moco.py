@@ -236,7 +236,7 @@ parser.add_argument(
     help="date time",
 )
 parser.add_argument(
-    "--ckpt_save_freq",
+    "--model_ckpt_freq",
     default=10,
     type=int,
     help="checkpoint save frequency",
@@ -500,7 +500,7 @@ def main_worker(gpu, ngpus_per_node, args):
         # if not args.multiprocessing_distributed or (
         #     args.multiprocessing_distributed and args.rank == 0
         # ):  # only the first GPU saves checkpoint
-        if (epoch + 1) % args.ckpt_save_freq == 0:
+        if (epoch + 1) % args.model_ckpt_freq == 0:
             save_checkpoint(
                 {
                     "epoch": epoch + 1,
