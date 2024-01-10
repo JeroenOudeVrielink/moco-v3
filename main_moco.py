@@ -501,6 +501,7 @@ def main_worker(gpu, ngpus_per_node, args):
         #     args.multiprocessing_distributed and args.rank == 0
         # ):  # only the first GPU saves checkpoint
         if (epoch + 1) % args.model_ckpt_freq == 0:
+            filename = os.path.join(args.output_dir, "checkpoint_%04d.pth.tar" % epoch)
             save_checkpoint(
                 {
                     "epoch": epoch + 1,
@@ -510,7 +511,7 @@ def main_worker(gpu, ngpus_per_node, args):
                     "scaler": scaler.state_dict(),
                 },
                 is_best=False,
-                filename="checkpoint_%04d.pth.tar" % epoch,
+                filename=filename,
             )
 
     if args.rank == 0:
